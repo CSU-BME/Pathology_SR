@@ -1,0 +1,26 @@
+This is a super-resolution algorithm for pathology. The program runs on the mmcv_full==1.6.0 library.
+
+(1) Dataset:
+A minimized MSR training and validation dataset, from which 10% of images were randomly sampled for each.
+Download link:
+
+(2) Modify configs/restorers/Pathology_MSR/glean_in256out2048_pathology.py:
+Update paths in the data dictionary for the dataset:
+lq_folder='your path'
+gt_folder='your path'
+Set other hyperparameters inside as needed, including loss functions, number of iterations, etc.
+
+(3) configs/restorers/Pathology_MSR/create_anno.py:
+Select a subset of images from the validation set for validation (to reduce validation time) and generate the create_anno.txt file.
+
+(4) tools/train.py: Train the MSR model.
+Requires a Tesla A100 80GB GPU, approximately 3-4 days depending on the number of iterations.
+
+(5) demo/restoration_demo.py: Generate a 40X image from a 5X image for demonstration.
+
+(6) tools/generate_WSI.py: Generate 40X whole slide images from 5X image patches.
+
+(7) Pretrained models:
+pretrained/finetuned-style-gan.pth: The finetuned StyleGAN model for pathology images.
+pretrained/pretrained_MSR.pth: A pretrained MSR model.
+Download link: https://pan.baidu.com/s/1KXqGceto7GhH3f02RzjnXQ?pwd=qdax
