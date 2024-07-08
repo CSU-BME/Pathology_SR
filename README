@@ -1,8 +1,10 @@
 This is a super-resolution algorithm for pathology. The program runs on the mmcv_full==1.6.0 library.
+Here is the code for the manusript:  Accurate diagnosis achieved via super-resolution whole slide images by pathologists and artificial intelligence
+with the doi: https://medrxiv.org/cgi/content/short/2024.07.05.24310022v1.
 
 (1) Dataset:
 A minimized MSR training and validation dataset, from which 10% of images were randomly sampled for each.
-Download link:
+Download link:https://pan.baidu.com/s/1Uu0P-NFX9W6NXlVGcvLA4g?pwd=g33c
 
 (2) Modify configs/restorers/Pathology_MSR/glean_in256out2048_pathology.py:
 Update paths in the data dictionary for the dataset:
